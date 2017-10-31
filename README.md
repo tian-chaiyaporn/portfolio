@@ -1,9 +1,4 @@
 ## TO DO
-*setup container for routing
-5. setup Home container
-5. setup Contact container
-6. setup Resumer container
-7. setup SampleWork container
 
 *navigate to easily see changes*
 4. create Navigation to easily see changes
