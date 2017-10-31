@@ -1,0 +1,51 @@
+{
+  "skills": [
+    {
+      "type": "Frontend Development",
+      "level": "Beginner to Intermediate",
+      "technology": ["JavaScript", "ES6", "React", "Redux", "HTML5", "CSS", "SASS", "Gulp"]
+    },
+    {
+      "type": "Backend Development",
+      "level": "Beginner - I can do quick fixes and prototypes if needed, willing to learn more",
+      "technology": ["NodeJS", "Express", "MongoDB", "MySQL"],
+      "note": "Has some experience with Python and PostgreSQL and can pick up if needed"
+    },
+    {
+      "type": "Mobile Development - React Native",
+      "level": "Beginner - Has Build One Project Currently, in process of learning more",
+      "technology": ["React Native", "Redux", "Expo"],
+      "note": "Has Miminal experience with Android development in Java, in process of learning more, including Swift"
+    },
+    {
+      "type": "Design - Graphic, UI, UX",
+      "level": "Intermediate",
+      "technology": ["Adobe Photoshop", "Adobe Illustrator"],
+      "note": "transitioning to being a developer, but can easily pick up and produce professional design work if needed"
+    }
+  ],
+  "education": {
+    "School": "Studied in England for highschool, in Thailand for primary school",
+    "Bachelors": "Cardiff University: Architecture - grade: (2-1), equivalent to 3.4, or B+",
+    "Masters": "New York University: Communications and Management - grade: 3.9, or A",
+    "MOOC": {
+      "Udacity": ["React Nanodegree", "Full Stack Web Developer Nanodegree", "Android Basic Nanodegree by Google"],
+      "Thinkful": ["Flexible Full Stack Web Developer Course"]
+    }
+  },
+  "workExperience": [
+    {
+      "year": "2016-2017",
+      "title": "Founder/Manager",
+      "company": "NOAM NEW YORK",
+      "experience": "started a small online retail business with a friend while learning programming to transition into a web developer..."
+    },
+    {
+      "year": "2013-2014",
+      "title": "Intern",
+      "company": "TBWA THAILAND",
+      "experience": "work as an intern for advertising company...."
+    }
+  ],
+  "lookingFor": "Frontend Development Job - Entry Level"
+}

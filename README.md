@@ -1,7 +1,4 @@
 ## TO DO
-*setup*
-3. create mock data
-
 *setup container for routing
 5. setup Home container
 5. setup Contact container
