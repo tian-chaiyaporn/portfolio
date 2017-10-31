@@ -1,6 +1,5 @@
 ## TO DO
 *setup*
-2. Hook up react routers
 3. create mock data
 
 *setup container for routing
