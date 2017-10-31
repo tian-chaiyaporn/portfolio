@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+class Resumer extends Component {
   render() {
     return (
       <div className="App">
-        Hello World
+        Resume
       </div>
     );
   }

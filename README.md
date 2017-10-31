@@ -1,6 +1,5 @@
 ## TO DO
 *setup*
-1. create initial basic file Structure
 2. Hook up react routers
 3. create mock data
 
