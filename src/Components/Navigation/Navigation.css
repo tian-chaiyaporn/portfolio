@@ -1,0 +1,65 @@
+.Navigation {
+  position: fixed;
+  right: 20px;
+  text-align: right;
+  text-decoration: none;
+  font-size: 1.15em
+}
+
+.Navigation a {
+  text-decoration: none;
+}
+
+.character-link {
+  height: 20px;
+  cursor: pointer;
+}
+
+.link-text {
+  cursor: pointer;
+  float: right;
+  overflow: hidden;
+  letter-spacing: .30em;
+  margin-top: 0px;
+  margin-right: 2px;
+  width:15%;
+}
+
+.txt {
+  color: #FFFF00;
+  background-color: #212121;
+}
+
+.txt-bracket {
+  float:right;
+  color: #FFFF00;
+  background-color: #212121;
+}
+
+.disable-click {
+  pointer-events: none;
+}
+
+.enable-click {
+  pointer-events: auto;
+}
+
+.animationIn {
+  width: 91%;
+  animation: type-in 0.6s steps(6, end)
+}
+
+@keyframes type-in{
+  from {width:15%}
+  to {width: 91%}
+}
+
+.animationOut {
+  width:15%;
+  animation: type-out 0.6s steps(6, end)
+}
+
+@keyframes type-out{
+  from {width: 91%}
+  to {width:15%}
+}
