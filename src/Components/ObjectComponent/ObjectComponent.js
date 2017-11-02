@@ -7,26 +7,48 @@ class ObjectComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      objectBtn: '...}'
+      objectBtn: '...}',
+      arrayBtn: '...]'
     }
     this.arrayButton = this.arrayButton.bind(this)
     this.objectButton = this.objectButton.bind(this)
   }
 
-  arrayButton(arrayData) {
-    return <ArrayComponent data={arrayData}/>
+  arrayButton(e, arrayData) {
+    e.stopPropagation();
+    if (arrayData === 'back') {
+      this.setState({arrayBtn: '...]'})
+    } else {
+      this.setState({
+        arrayBtn: (<ArrayComponent data={arrayData} nested={true}/>)
+      })
+    }
   }
 
-  objectButton(objectData) {
-    this.setState({
-      objectBtn: <ObjectComponent data={objectData} nested={true}/>
-    })
+  objectButton(e, objectData) {
+    e.stopPropagation();
+    if (objectData === 'back') {
+      this.setState({objectBtn: '...}'})
+    } else {
+      this.setState({
+        objectBtn: (<ObjectComponent data={objectData} nested={true}/>)
+      })
+    }
   }
 
   render() {
     const data = this.props.data;
     const elem = [];
     const dataLength = Object.keys(data).length;
+
+    const hideObject = this.state.objectBtn !== '...}'
+      ? <span style={{float:'right'}}> {'<'} </span>
+      : ''
+
+    const hideArray = this.state.arrayBtn !== '...]'
+      ? <span style={{float:'right'}}> {'<'} </span>
+      : ''
+
     let counter = 0;
     // loop through each key in object
     for (const key in data) {
@@ -43,7 +65,9 @@ class ObjectComponent extends Component {
       else if (Array.isArray(data[key])) {
         const returnElem = (
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{`${key}: `}</span><ArrayComponent data={data[key]}/>
+            <span>{`${key}: [`}</span>
+            <span onClick={(e) => this.arrayButton(e, 'back')}>{hideArray}</span>
+            <span onClick={(e) => this.arrayButton(e, data[key])}>{this.state.arrayBtn}</span>
           </div>
         )
         elem.push(returnElem)
@@ -53,7 +77,8 @@ class ObjectComponent extends Component {
         const returnElem = (
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: {`}</span>
-            <span onClick={() => this.objectButton(data[key])}>{this.state.objectBtn}</span>
+            <span onClick={(e) => this.objectButton(e, 'back')}>{hideObject}</span>
+            <span onClick={(e) => this.objectButton(e, data[key])}>{this.state.objectBtn}</span>
           </div>
         )
         elem.push(returnElem)
