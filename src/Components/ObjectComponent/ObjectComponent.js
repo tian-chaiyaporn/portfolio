@@ -6,9 +6,21 @@ import ArrayComponent from '../ArrayComponent/ArrayComponent';
 class ObjectComponent extends Component {
   constructor(props) {
     super(props)
+    const uniqueComponentId = shortid.generate()
+    const uniqueObjButton = 'objectBtn' + uniqueComponentId
+    const uniqueArrayButton = 'arrayBtn' + uniqueComponentId
+
+    this.uniqueObjButton = uniqueObjButton
+    this.uniqueArrayButton = uniqueArrayButton
+
+    // unique ID for component needed because react setState() function
+    // do not distinguish between a parent's recursive component and its child
+    // i.e. if a simple name is used for the state, then calling setState on the
+    // parent's component will also update child's component
     this.state = {
-      objectBtn: '...}',
-      arrayBtn: '...]'
+      [uniqueObjButton]: '...}',
+      [uniqueArrayButton]: '...]',
+      componentId: shortid.generate()
     }
     this.arrayButton = this.arrayButton.bind(this)
     this.objectButton = this.objectButton.bind(this)
@@ -17,10 +29,10 @@ class ObjectComponent extends Component {
   arrayButton(e, arrayData) {
     e.stopPropagation();
     if (arrayData === 'back') {
-      this.setState({arrayBtn: '...]'})
+      this.setState({[this.uniqueArrayButton]: '...]'})
     } else {
       this.setState({
-        arrayBtn: (<ArrayComponent data={arrayData} nested={true}/>)
+        [this.uniqueArrayButton]: (<ArrayComponent data={arrayData} nested={true}/>)
       })
     }
   }
@@ -28,10 +40,10 @@ class ObjectComponent extends Component {
   objectButton(e, objectData) {
     e.stopPropagation();
     if (objectData === 'back') {
-      this.setState({objectBtn: '...}'})
+      this.setState({[this.uniqueObjButton]: '...}'})
     } else {
       this.setState({
-        objectBtn: (<ObjectComponent data={objectData} nested={true}/>)
+        [this.uniqueObjButton]: (<ObjectComponent data={objectData} nested={true}/>)
       })
     }
   }
@@ -41,11 +53,11 @@ class ObjectComponent extends Component {
     const elem = [];
     const dataLength = Object.keys(data).length;
 
-    const hideObject = this.state.objectBtn !== '...}'
+    const hideObject = this.state[this.uniqueObjButton] !== '...}'
       ? <span style={{float:'right'}}> {'<'} </span>
       : ''
 
-    const hideArray = this.state.arrayBtn !== '...]'
+    const hideArray = this.state[this.uniqueArrayButton] !== '...]'
       ? <span style={{float:'right'}}> {'<'} </span>
       : ''
 
@@ -67,7 +79,7 @@ class ObjectComponent extends Component {
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: [`}</span>
             <span onClick={(e) => this.arrayButton(e, 'back')}>{hideArray}</span>
-            <span onClick={(e) => this.arrayButton(e, data[key])}>{this.state.arrayBtn}</span>
+            <span onClick={(e) => this.arrayButton(e, data[key])}>{this.state[this.uniqueArrayButton]}</span>
           </div>
         )
         elem.push(returnElem)
@@ -78,7 +90,7 @@ class ObjectComponent extends Component {
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: {`}</span>
             <span onClick={(e) => this.objectButton(e, 'back')}>{hideObject}</span>
-            <span onClick={(e) => this.objectButton(e, data[key])}>{this.state.objectBtn}</span>
+            <span onClick={(e) => this.objectButton(e, data[key])}>{this.state[this.uniqueObjButton]}</span>
           </div>
         )
         elem.push(returnElem)
