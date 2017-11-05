@@ -6,60 +6,45 @@ import ArrayComponent from '../ArrayComponent/ArrayComponent';
 class ObjectComponent extends Component {
   constructor(props) {
     super(props)
-    const uniqueComponentId = shortid.generate()
-    const uniqueObjButton = 'objectBtn' + uniqueComponentId
-    const uniqueArrayButton = 'arrayBtn' + uniqueComponentId
-
-    this.uniqueObjButton = uniqueObjButton
-    this.uniqueArrayButton = uniqueArrayButton
-
-    // unique ID for component needed because react setState() function
-    // do not distinguish between a parent's recursive component and its child
-    // i.e. if a simple name is used for the state, then calling setState on the
-    // parent's component will also update child's component
     this.state = {
-      [uniqueObjButton]: '...}',
-      [uniqueArrayButton]: '...]',
-      componentId: shortid.generate()
+      componentId: shortid.generate(),
+      childBtnState: this.props.savedState ? this.props.savedState.slice(1) : [],
+      ownBtnState: this.props.savedState ? this.props.savedState[0] : Object.keys(this.props.data).map(k => false)
     }
-    this.arrayButton = this.arrayButton.bind(this)
-    this.objectButton = this.objectButton.bind(this)
+    this.expandButton = this.expandButton.bind(this)
+    this.updateChildButtonsState = this.updateChildButtonsState.bind(this)
   }
 
-  arrayButton(e, arrayData) {
-    e.stopPropagation();
-    if (arrayData === 'back') {
-      this.setState({[this.uniqueArrayButton]: '...]'})
-    } else {
-      this.setState({
-        [this.uniqueArrayButton]: (<ArrayComponent data={arrayData} nested={true}/>)
-      })
-    }
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state.ownBtnState === nextState.ownBtnState ? false : true
   }
 
-  objectButton(e, objectData) {
+  componentDidUpdate() {
+    this.props.hoistState && this.props.hoistState(this.state.ownBtnState, 0)
+  }
+
+  updateChildButtonsState(childButtonsState, index) {
+    this.props.recursive && this.props.hoistState(childButtonsState, index + 1)
+    this.setState((prevState) => {
+      let newState = prevState.childBtnState
+      newState[index] = childButtonsState
+      return {childBtnState: newState}
+    })
+  }
+
+  // index is used to identify button order, as so to keep its state and pass
+  // up to parent so on rerender, it rerenders the same child expand state
+  expandButton(e, currentIndex) {
     e.stopPropagation();
-    if (objectData === 'back') {
-      this.setState({[this.uniqueObjButton]: '...}'})
-    } else {
-      this.setState({
-        [this.uniqueObjButton]: (<ObjectComponent data={objectData} nested={true}/>)
-      })
-    }
+    this.setState((prevState) => ({
+      ownBtnState: prevState.ownBtnState.map((i, index) => currentIndex === index ? !i : i)
+    }))
   }
 
   render() {
     const data = this.props.data;
     const elem = [];
     const dataLength = Object.keys(data).length;
-
-    const hideObject = this.state[this.uniqueObjButton] !== '...}'
-      ? <span style={{float:'right'}}> {'<'} </span>
-      : ''
-
-    const hideArray = this.state[this.uniqueArrayButton] !== '...]'
-      ? <span style={{float:'right'}}> {'<'} </span>
-      : ''
 
     let counter = 0;
     // loop through each key in object
@@ -73,29 +58,63 @@ class ObjectComponent extends Component {
           </div>
         )
       }
-      // if data is array, call ArrayComponent
+      // if data is array, call ArrayCo
+      // mponent
       else if (Array.isArray(data[key])) {
+        const arrayComp = (
+          <ArrayComponent
+            data={data[key]}
+            nested={true}
+            hoistState={this.updateChildButtonsState}
+            savedState={this.state.childBtnState.length >= 1 && this.state.childBtnState}
+          />
+        )
+        const index = counter - 1
         const returnElem = (
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: [`}</span>
-            <span onClick={(e) => this.arrayButton(e, 'back')}>{hideArray}</span>
-            <span onClick={(e) => this.arrayButton(e, data[key])}>{this.state[this.uniqueArrayButton]}</span>
+              <span>
+                {this.state.ownBtnState[index] &&
+                  <span style={{float:'right'}} onClick={(e) => this.expandButton(e, index)}> {'<'} </span>}
+              </span>
+              <span>
+                {this.state.ownBtnState[index]
+                  ? arrayComp
+                  : <span onClick={(e) => this.expandButton(e, index)}>{'...]'}</span>}
+              </span>
           </div>
         )
         elem.push(returnElem)
       }
-      // if data is object, call ObjectComponent
+      // if data is object, call ObjectComponent recursively
       else if (Object.prototype.toString.call(data[key]) === "[object Object]") {
+        const objectComp = (
+          <ObjectComponent
+            data={data[key]}
+            nested={true}
+            hoistState={this.updateChildButtonsState}
+            savedState={this.state.childBtnState.length >= 1 && this.state.childBtnState}
+          />
+        )
+        const index = counter - 1
         const returnElem = (
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: {`}</span>
-            <span onClick={(e) => this.objectButton(e, 'back')}>{hideObject}</span>
-            <span onClick={(e) => this.objectButton(e, data[key])}>{this.state[this.uniqueObjButton]}</span>
+            <span>
+              {this.state.ownBtnState[index] &&
+                <span style={{float:'right'}} onClick={(e) => this.expandButton(e, index)}> {'<'} </span>}
+            </span>
+            <span>
+              {this.state.ownBtnState[index]
+                ? objectComp
+                : <span onClick={(e) => this.expandButton(e, index)}>{'...}'}</span>}
+            </span>
           </div>
         )
         elem.push(returnElem)
-      } else {
-        // otherwise, returns undefined
+      }
+      // otherwise, returns undefined
+      else {
         elem.push(
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: undefined${counter !== dataLength ? ',' : ''}`}</span>
