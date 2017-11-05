@@ -3,7 +3,7 @@
   right: 20px;
   text-align: right;
   text-decoration: none;
-  font-size: 1.15em
+  font-size: 1.15em;
 }
 
 .Navigation a {
@@ -26,14 +26,14 @@
 }
 
 .txt {
-  color: #FFFF00;
-  background-color: #212121;
+  color: #FFCC00;
+  background-color: #282828;
 }
 
 .txt-bracket {
   float:right;
-  color: #FFFF00;
-  background-color: #212121;
+  color: #FFCC00;
+  background-color: #282828;
 }
 
 .disable-click {
