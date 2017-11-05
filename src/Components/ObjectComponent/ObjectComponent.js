@@ -11,7 +11,7 @@ class ObjectComponent extends Component {
       ownBtnState: this.props.savedState && this.props.savedState.ownState
         ? this.props.savedState.ownState.map(s => s)
         : Object.keys(this.props.data).map(k => false),
-      componentIndex: this.props.componentIndex ? this.props.componentIndex : 'cannot have componentIndex without hostState and nested prop'
+      componentIndex: this.props.componentIndex ? this.props.componentIndex : 0
     }
     this.expandButton = this.expandButton.bind(this)
     this.updateChildButtonsState = this.updateChildButtonsState.bind(this)
@@ -66,7 +66,7 @@ class ObjectComponent extends Component {
             commar={counter !== dataLength ? true : false}
             componentIndex={index}
             hoistState={this.updateChildButtonsState}
-            savedState={this.state.childBtnState.length >= 0 && this.state.childBtnState}
+            savedState={this.state.childBtnState.length >= 0 && this.state.childBtnState[index]}
           />
         )
         const returnElem = (
