@@ -1,8 +1,6 @@
 ## TO DO
 
 *create main components*
-8. create ObjectComponent Component (should this render complex object with nested arrays inside?) - may need to create recursive component calling
-9. create ArrayComponent Component (object in array?) - may need to create recursive component calling
 10. create HTMLTagComponent Component ()
 
 *create containers*

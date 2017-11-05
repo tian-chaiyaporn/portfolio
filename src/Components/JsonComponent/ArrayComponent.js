@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid'
 import ObjectComponent from '../JsonComponent/ObjectComponent';
+import './JsonComponent.css'
 
 class ArrayComponent extends Component {
   constructor(props) {
@@ -71,12 +72,12 @@ class ArrayComponent extends Component {
             <span>{`{`}</span>
             <span>
               {this.state.ownBtnState[index] &&
-                <span style={{float:'right'}} onClick={(e) => this.expandButton(e, index)}> {'<'} </span>}
+                <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? objectComp
-                : <span onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...},' : '...}'}</span>}
+                : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...},' : '...}'}</span>}
             </span>
           </div>
         )
@@ -99,12 +100,12 @@ class ArrayComponent extends Component {
             <span>{'['}</span>
             <span>
               {this.state.ownBtnState[index] &&
-                <span style={{float:'right'}} onClick={(e) => this.expandButton(e, index)}> {'<'} </span>}
+                <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? arrayComp
-                : <span onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...],' : '...]'}</span>}
+                : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...],' : '...]'}</span>}
             </span>
           </div>
         )

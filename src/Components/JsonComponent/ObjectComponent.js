@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid'
 import ArrayComponent from '../JsonComponent/ArrayComponent';
+import './JsonComponent.css'
 
 class ObjectComponent extends Component {
   constructor(props) {
@@ -74,12 +75,12 @@ class ObjectComponent extends Component {
             <span>{`${key}: [`}</span>
               <span>
                 {this.state.ownBtnState[index] &&
-                  <span style={{float:'right'}} onClick={(e) => this.expandButton(e, index)}> {'<'} </span>}
+                  <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
               </span>
               <span>
                 {this.state.ownBtnState[index]
                   ? arrayComp
-                  : <span onClick={(e) => this.expandButton(e, index)}>{'...]'}</span>}
+                  : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...],' : '...]'}</span>}
               </span>
           </div>
         )
@@ -103,12 +104,12 @@ class ObjectComponent extends Component {
             <span>{`${key}: {`}</span>
             <span>
               {this.state.ownBtnState[index] &&
-                <span style={{float:'right'}} onClick={(e) => this.expandButton(e, index)}> {'<'} </span>}
+                <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? objectComp
-                : <span onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...},' : '...}'}</span>}
+                : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...},' : '...}'}</span>}
             </span>
           </div>
         )
@@ -125,7 +126,7 @@ class ObjectComponent extends Component {
     }
 
     return (
-      <div className="ObjectComponent">
+      <div className={ this.props.nested ? 'object-compo' : 'top-parent'}>
         { this.props.nested ? '' : '{'}
           {elem}
         { this.props.commar ? '},' : '}'}

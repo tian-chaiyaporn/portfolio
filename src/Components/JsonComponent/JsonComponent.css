@@ -1,0 +1,17 @@
+.top-parent {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.expand-arrow {
+  float: left;
+  position: absolute;
+  left: -10px;
+  cursor: pointer;
+}
+
+.expand-btn {
+  cursor: pointer;
+}
