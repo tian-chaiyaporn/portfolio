@@ -18,7 +18,6 @@ class ObjectComponent extends Component {
   }
 
   componentDidUpdate() {
-    console.log('updating')
     this.props.nested && this.props.hoistState(this.state.ownBtnState, this.state.childBtnState, this.state.componentIndex)
   }
 
@@ -64,6 +63,7 @@ class ObjectComponent extends Component {
           <ArrayComponent
             data={data[key]}
             nested={true}
+            commar={counter !== dataLength ? true : false}
             componentIndex={index}
             hoistState={this.updateChildButtonsState}
             savedState={this.state.childBtnState.length >= 0 && this.state.childBtnState}
@@ -92,6 +92,7 @@ class ObjectComponent extends Component {
           <ObjectComponent
             data={data[key]}
             nested={true}
+            commar={counter !== dataLength ? true : false}
             componentIndex={index}
             hoistState={this.updateChildButtonsState}
             savedState={this.state.childBtnState.length >= 0 && this.state.childBtnState[index]}
@@ -107,7 +108,7 @@ class ObjectComponent extends Component {
             <span>
               {this.state.ownBtnState[index]
                 ? objectComp
-                : <span onClick={(e) => this.expandButton(e, index)}>{'...}'}</span>}
+                : <span onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...},' : '...}'}</span>}
             </span>
           </div>
         )
@@ -127,7 +128,7 @@ class ObjectComponent extends Component {
       <div className="ObjectComponent">
         { this.props.nested ? '' : '{'}
           {elem}
-        { this.props.nested ? '},' : '}'}
+        { this.props.commar ? '},' : '}'}
       </div>
     );
   }
