@@ -3,7 +3,8 @@ body {
   padding: 0;
   font-family: 'VT323', monospace;
   height: 100%;
+  width: 100%;
   position: absolute;
-  background-color: #212121;
-  color: white;
+  background-color: #282828;
+  color: #FFCC00;
 }
