@@ -7,7 +7,6 @@ class ObjectComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      componentId: shortid.generate(),
       childBtnState: this.props.savedState && this.props.savedState.childState ? this.props.savedState.childState : [],
       ownBtnState: this.props.savedState && this.props.savedState.ownState
         ? this.props.savedState.ownState.map(s => s)
@@ -18,16 +17,12 @@ class ObjectComponent extends Component {
     this.updateChildButtonsState = this.updateChildButtonsState.bind(this)
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return this.state.ownBtnState === nextState.ownBtnState ? false : true
-  }
-
   componentDidUpdate() {
+    console.log('updating')
     this.props.nested && this.props.hoistState(this.state.ownBtnState, this.state.childBtnState, this.state.componentIndex)
   }
 
   updateChildButtonsState(childButtonsState, grandChildState , index) {
-    this.props.nested && this.props.hoistState(childButtonsState, grandChildState, this.state.componentIndex)
     this.setState((prevState) => {
       let newState = prevState.childBtnState
       newState[index] = {ownState: childButtonsState, childState: grandChildState}
