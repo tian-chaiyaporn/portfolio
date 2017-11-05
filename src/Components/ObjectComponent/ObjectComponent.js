@@ -8,8 +8,11 @@ class ObjectComponent extends Component {
     super(props)
     this.state = {
       componentId: shortid.generate(),
-      childBtnState: this.props.savedState ? this.props.savedState.slice(1) : [],
-      ownBtnState: this.props.savedState ? this.props.savedState[0] : Object.keys(this.props.data).map(k => false)
+      childBtnState: this.props.savedState && this.props.savedState.childState ? this.props.savedState.childState : [],
+      ownBtnState: this.props.savedState && this.props.savedState.ownState
+        ? this.props.savedState.ownState.map(s => s)
+        : Object.keys(this.props.data).map(k => false),
+      componentIndex: this.props.componentIndex ? this.props.componentIndex : 'cannot have componentIndex without hostState and nested prop'
     }
     this.expandButton = this.expandButton.bind(this)
     this.updateChildButtonsState = this.updateChildButtonsState.bind(this)
@@ -20,14 +23,14 @@ class ObjectComponent extends Component {
   }
 
   componentDidUpdate() {
-    this.props.hoistState && this.props.hoistState(this.state.ownBtnState, 0)
+    this.props.nested && this.props.hoistState(this.state.ownBtnState, this.state.childBtnState, this.state.componentIndex)
   }
 
-  updateChildButtonsState(childButtonsState, index) {
-    this.props.recursive && this.props.hoistState(childButtonsState, index + 1)
+  updateChildButtonsState(childButtonsState, grandChildState , index) {
+    this.props.nested && this.props.hoistState(childButtonsState, grandChildState, this.state.componentIndex)
     this.setState((prevState) => {
       let newState = prevState.childBtnState
-      newState[index] = childButtonsState
+      newState[index] = {ownState: childButtonsState, childState: grandChildState}
       return {childBtnState: newState}
     })
   }
@@ -37,7 +40,7 @@ class ObjectComponent extends Component {
   expandButton(e, currentIndex) {
     e.stopPropagation();
     this.setState((prevState) => ({
-      ownBtnState: prevState.ownBtnState.map((i, index) => currentIndex === index ? !i : i)
+      ownBtnState: prevState.ownBtnState.map((i, index) => currentIndex === index ? !i: i)
     }))
   }
 
@@ -61,15 +64,16 @@ class ObjectComponent extends Component {
       // if data is array, call ArrayCo
       // mponent
       else if (Array.isArray(data[key])) {
+        const index = counter - 1
         const arrayComp = (
           <ArrayComponent
             data={data[key]}
             nested={true}
+            componentIndex={index}
             hoistState={this.updateChildButtonsState}
-            savedState={this.state.childBtnState.length >= 1 && this.state.childBtnState}
+            savedState={this.state.childBtnState.length >= 0 && this.state.childBtnState}
           />
         )
-        const index = counter - 1
         const returnElem = (
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: [`}</span>
@@ -88,15 +92,16 @@ class ObjectComponent extends Component {
       }
       // if data is object, call ObjectComponent recursively
       else if (Object.prototype.toString.call(data[key]) === "[object Object]") {
+        const index = counter - 1
         const objectComp = (
           <ObjectComponent
             data={data[key]}
             nested={true}
+            componentIndex={index}
             hoistState={this.updateChildButtonsState}
-            savedState={this.state.childBtnState.length >= 1 && this.state.childBtnState}
+            savedState={this.state.childBtnState.length >= 0 && this.state.childBtnState[index]}
           />
         )
-        const index = counter - 1
         const returnElem = (
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
             <span>{`${key}: {`}</span>
