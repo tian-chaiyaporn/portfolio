@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import './Contact.css'
 import contactData from '../../data/contact.json'
+import ObjectComponent from '../../Components/JsonComponent/ObjectComponent'
 
 class Contact extends Component {
   constructor() {
@@ -10,8 +12,12 @@ class Contact extends Component {
   }
   render() {
     return (
-      <div className="contact">
-        {JSON.stringify(this.state.contact)}
+      <div className="container">
+        <div className="contact">
+          <div className="contact-box">
+            <ObjectComponent data={this.state.contact} />
+          </div>
+        </div>
       </div>
     );
   }
