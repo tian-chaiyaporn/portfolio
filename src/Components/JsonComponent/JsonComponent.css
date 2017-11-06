@@ -2,18 +2,22 @@
   position: relative;
   max-width: 600px;
   width: 100%;
-  font-size: 1.3em;
+  font-size: 1.2em;
+  line-height: 0.9em;
+  margin-bottom: 100px;
 }
 
 .expand-arrow {
   float: left;
   position: absolute;
-  left: -10px;
+  left: 0px;
   cursor: pointer;
+  color: #757575;
 }
 
 .expand-btn {
   cursor: pointer;
+  color: #757575;
 }
 
 .link {
@@ -23,4 +27,16 @@
 
 .link:hover {
   color: #FFFFFF;
+}
+
+.key-value {
+  margin: 8px 0 0 15px;
+}
+
+.value {
+  color: #33FF00
+}
+
+.syntax {
+  color: #757575
 }
