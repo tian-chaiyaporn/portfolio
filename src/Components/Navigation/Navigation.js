@@ -82,7 +82,7 @@ class Navigation extends Component {
       <p className={`character-link`} onClick={() => this.addAnimation('resume')}>
         <span className='txt-bracket'>]</span>
         <Link className={`${this.state.resume ? 'enable-click' : 'disable-click'} link`} to={'/resume'}>
-          <span className={`${this.state.resume ? 'animationIn' : 'animationOut'} link-text`}><span className='txt'>[RESUME</span></span>
+          <span className={`${this.state.resume ? 'animationIn' : 'animationOut'} link-text`}><span className='txt'>[DATABASE</span></span>
         </Link>
       </p>
     )
@@ -91,7 +91,7 @@ class Navigation extends Component {
       <p className={`character-link`} onClick={() => this.addAnimation('sample')}>
         <span className='txt-bracket'>]</span>
         <Link className={`${this.state.sample ? 'enable-click' : 'disable-click'} link`} to={'/sample-work'}>
-          <span className={`${this.state.sample ? 'animationIn' : 'animationOut'} link-text`}><span className='txt'>[SAMPLES</span></span>
+          <span className={`${this.state.sample ? 'animationIn' : 'animationOut'} link-text`}><span className='txt'>[SAMPLE_WORKS</span></span>
         </Link>
       </p>
     )

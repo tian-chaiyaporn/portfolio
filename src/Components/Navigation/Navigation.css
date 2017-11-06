@@ -4,6 +4,7 @@
   text-align: right;
   text-decoration: none;
   font-size: 1.15em;
+  z-index: 1;
 }
 
 .Navigation a {
@@ -21,7 +22,6 @@
   overflow: hidden;
   letter-spacing: .30em;
   margin-top: 0px;
-  margin-right: 2px;
   width:15%;
 }
 
@@ -45,13 +45,13 @@
 }
 
 .animationIn {
-  width: 91%;
+  width: 95%;
   animation: type-in 0.6s steps(6, end)
 }
 
 @keyframes type-in{
   from {width:15%}
-  to {width: 91%}
+  to {width: 95%}
 }
 
 .animationOut {
@@ -60,6 +60,6 @@
 }
 
 @keyframes type-out{
-  from {width: 91%}
+  from {width: 95%}
   to {width:15%}
 }
