@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from './Containers/Home/Home'
 import Contact from './Containers/Contact/Contact'
-import Resume from './Containers/Resume/Resume'
+import Database from './Containers/Database/Database'
 import SampleWork from './Containers/SampleWork/SampleWork'
 import Navigation from './Components/Navigation/Navigation'
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
@@ -15,7 +15,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/contact" component={Contact} />
-            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/database" component={Database} />
             <Route exact path="/sample-work" component={SampleWork} />
             <Route render={() => (
                 <div>

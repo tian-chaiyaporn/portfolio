@@ -7,7 +7,7 @@ class Navigation extends Component {
     super()
     this.state = {
       contact: false,
-      resume: false,
+      database: false,
       sample: false,
       currentPointer: ''
     }
@@ -31,7 +31,7 @@ class Navigation extends Component {
     this.setState({
       home: type === 'home' ? true : false,
       contact: type === 'contact' ? true : false,
-      resume: type === 'resume' ? true : false,
+      database: type === 'database' ? true : false,
       sample: type === 'sample' ? true : false,
       currentPointer: type === 'home' ? '' : type === 'sample' ? 'sample-work' : type
     })
@@ -42,8 +42,8 @@ class Navigation extends Component {
       case 104 || 72: // h || H
         this.addAnimation('home')
         break;
-      case 114 || 82: // r || R
-        this.addAnimation('resume')
+      case 100 || 68: // d || D
+        this.addAnimation('database')
         break;
       case 115 || 83: // s || S
         this.addAnimation('sample')
@@ -55,14 +55,14 @@ class Navigation extends Component {
         this.props.history.push(`/${this.state.currentPointer}`)
         break;
       default:
-        this.setState({ home: false, contact: false, resume: false, sample: false })
+        this.setState({ home: false, contact: false, database: false, sample: false })
     }
   }
 
   // function modified from https://stackoverflow.com/questions/32553158/detect-click-outside-react-component
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({ home: false, contact: false, resume: false, sample: false})
+      this.setState({ home: false, contact: false, database: false, sample: false})
     }
   }
 
@@ -78,11 +78,11 @@ class Navigation extends Component {
       </p>
     )
 
-    const resumeLink = (
-      <p className={`character-link`} onClick={() => this.addAnimation('resume')}>
+    const databaseLink = (
+      <p className={`character-link`} onClick={() => this.addAnimation('database')}>
         <span className='txt-bracket'>]</span>
-        <Link className={`${this.state.resume ? 'enable-click' : 'disable-click'} link`} to={'/resume'}>
-          <span className={`${this.state.resume ? 'animationIn' : 'animationOut'} link-text`}><span className='txt'>[DATABASE</span></span>
+        <Link className={`${this.state.database ? 'enable-click' : 'disable-click'} link`} to={'/database'}>
+          <span className={`${this.state.database ? 'animationIn' : 'animationOut'} link-text`}><span className='txt'>[DATABASE</span></span>
         </Link>
       </p>
     )
@@ -108,7 +108,7 @@ class Navigation extends Component {
     return (
       <div className="Navigation" ref={this.setWrapperRef}>
         {homeLink}
-        {resumeLink}
+        {databaseLink}
         {sampleLink}
         {contactLink}
       </div>
