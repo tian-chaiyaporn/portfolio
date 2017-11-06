@@ -25,15 +25,26 @@
     }
   ],
   "education": {
-    "School": "Studied in England for highschool, in Thailand for primary school",
-    "Bachelors": "Cardiff University: Architecture - grade: (2-1), equivalent to 3.4, or B+",
-    "Masters": "New York University: Communications and Management - grade: 3.9, or A",
+    "School": {
+      "Primary": "Thailand",
+      "Secondary": "England - A levels"
+    },
+    "Bachelors": {
+      "Location": "Cardiff University",
+      "Subject": "Architecture",
+      "Grade": "Second-class Honour, Upper Division (equivalent to B+)"
+    },
+    "Masters": {
+      "Location": "New York University",
+      "Subject": "Communications and Management",
+      "Grade": "3.9 (equivalent to A)"
+    },
     "MOOC": {
       "Udacity": ["React Nanodegree", "Full Stack Web Developer Nanodegree", "Android Basic Nanodegree by Google"],
       "Thinkful": ["Flexible Full Stack Web Developer Course"]
     }
   },
-  "workExperience": [
+  "work_Experience": [
     {
       "year": "2016-2017",
       "title": "Founder/Manager",
@@ -47,5 +58,5 @@
       "experience": "work as an intern for advertising company...."
     }
   ],
-  "lookingFor": "Frontend Development Job - Entry Level"
+  "looking_For": "Frontend Development Job - Entry Level"
 }
