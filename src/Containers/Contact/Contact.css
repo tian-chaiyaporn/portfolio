@@ -11,3 +11,21 @@
   height: 100%;
   padding: 20px;
 }
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.profile {
+  font-size: 2px;
+  line-height: 5px;
+  min-inline-size: min-content;
+  max-inline-size: min-content;
+  line-break: loose;
+  width: 345px;
+  color: #FFF;
+  align-self: flex-end;
+}
