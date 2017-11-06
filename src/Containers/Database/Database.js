@@ -15,6 +15,8 @@ class Database extends Component {
       <div className="container">
         <div className="database">
           <div className="database-item">
+            <h1>DATABASE</h1>
+            <h4>I.E. RESUME</h4>
             <ObjectComponent data={this.state.database} />
           </div>
         </div>
