@@ -50,9 +50,12 @@ class ObjectComponent extends Component {
       counter++
       // if data is number/string/boolean, return normal {key: number/string}
       if (typeof data[key] === 'string' || typeof data[key] === 'number' || typeof data[key] === 'boolean') {
+        const value = typeof data[key] && data[key].includes('.com') && (data[key].includes('http') || data[key].includes('www.'))
+          ? <a className='link' href={data[key]}>{data[key]}</a>
+          : <span>{data[key]}</span>
         elem.push(
           <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{`${key}: ${data[key]}${counter !== dataLength ? ',' : ''}`}</span>
+            <span>{`${key}: `}</span>{value}<span>{`${counter !== dataLength ? ',' : ''}`}</span>
           </div>
         )
       }

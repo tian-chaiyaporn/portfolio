@@ -48,9 +48,12 @@ class ArrayComponent extends Component {
     const finalElem = data.map((element, index) => {
       // if string/number/boolean, represent as such
       if (typeof element === 'string' || typeof element === 'number' || typeof element === 'boolean') {
+        const value = typeof element && element.includes('.com') && (element.includes('http') || element.includes('www.'))
+          ? <a className='link' href={element}>{element}</a>
+          : <span>{element}</span>
         return (
           <div key={shortid.generate()} style={{marginLeft: '5px', display: 'inline'}}>
-            <span>{`${element}${index + 1 !== dataLength ? ',' : ''}`}</span>
+            {value}<span>{`${index + 1 !== dataLength ? ',' : ''}`}</span>
           </div>
         )
       }
