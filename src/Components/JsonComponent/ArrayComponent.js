@@ -50,10 +50,10 @@ class ArrayComponent extends Component {
       if (typeof element === 'string' || typeof element === 'number' || typeof element === 'boolean') {
         const value = typeof element && element.includes('.com') && (element.includes('http') || element.includes('www.'))
           ? <a className='link' href={element}>{element}</a>
-          : <span>{element}</span>
+          : <span className='value'>{`'${element}'`}</span>
         return (
-          <div key={shortid.generate()} style={{marginLeft: '5px', display: 'inline'}}>
-            {value}<span>{`${index + 1 !== dataLength ? ',' : ''}`}</span>
+          <div key={shortid.generate()} style={{marginLeft: '5px', display: 'inline-block'}}>
+            {value}<span className='syntax'>{`${index + 1 !== dataLength ? ',' : ''}`}</span>
           </div>
         )
       }
@@ -71,16 +71,16 @@ class ArrayComponent extends Component {
           />
         )
         return (
-          <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{`{`}</span>
+          <div key={shortid.generate()} className='key-value'>
+            <span className='syntax'>{`{`}</span>
             <span>
               {this.state.ownBtnState[index] &&
-                <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? objectComp
-                : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...},' : '...}'}</span>}
+                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...},' : '...}'}</span>}
             </span>
           </div>
         )
@@ -99,16 +99,16 @@ class ArrayComponent extends Component {
           />
         )
         return (
-          <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{'['}</span>
+          <div key={shortid.generate()} className='key-value'>
+            <span className='syntax'>{'['}</span>
             <span>
               {this.state.ownBtnState[index] &&
-                <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? arrayComp
-                : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...],' : '...]'}</span>}
+                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...],' : '...]'}</span>}
             </span>
           </div>
         )
@@ -117,17 +117,19 @@ class ArrayComponent extends Component {
       else {
         return (
           <div key={shortid.generate()} style={{marginLeft: '5px'}}>
-            <span>{`undefined${index + 1 !== data.length ? ',' : ''}`}</span>
+            <span className='syntax'>{`undefined${index + 1 !== data.length ? ',' : ''}`}</span>
           </div>
         )
       }
     })
 
     return (
-      <div className="ArrayComponent" style={{ display: !detectObject && 'inline'}}>
-        { this.props.nested ? '' : '['}
-          {finalElem}
-        { this.props.commar ? '],' : ']'}
+      <div className="ArrayComponent" style={{ display: !detectObject && 'inline', marginBottom: '10px'}}>
+        <span className='syntax'>{ this.props.nested ? '' : '['}</span>
+          { detectObject ? <p></p> : ''}
+            {finalElem}
+          { detectObject ? <p></p> : ''}
+        <span className='syntax'>{ this.props.commar ? '],' : ']'}</span>
       </div>
     );
   }

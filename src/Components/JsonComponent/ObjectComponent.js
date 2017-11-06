@@ -52,10 +52,13 @@ class ObjectComponent extends Component {
       if (typeof data[key] === 'string' || typeof data[key] === 'number' || typeof data[key] === 'boolean') {
         const value = typeof data[key] && data[key].includes('.com') && (data[key].includes('http') || data[key].includes('www.'))
           ? <a className='link' href={data[key]}>{data[key]}</a>
-          : <span>{data[key]}</span>
+          : <span className='value'>{`${data[key]}`}</span>
         elem.push(
-          <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{`${key}: `}</span>{value}<span>{`${counter !== dataLength ? ',' : ''}`}</span>
+          <div key={shortid.generate()} className='key-value'>
+            <span className='key'>{`${key.toUpperCase()}`}</span>
+            <span className='syntax'>{`: '`}</span>
+            {value}
+            <span className='syntax'>{`${counter !== dataLength ? "'," : "'"}`}</span>
           </div>
         )
       }
@@ -74,17 +77,18 @@ class ObjectComponent extends Component {
           />
         )
         const returnElem = (
-          <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{`${key}: [`}</span>
-              <span>
-                {this.state.ownBtnState[index] &&
-                  <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
-              </span>
-              <span>
-                {this.state.ownBtnState[index]
-                  ? arrayComp
-                  : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...],' : '...]'}</span>}
-              </span>
+          <div key={shortid.generate()}  className='key-value'>
+            <span className='key'>{`${key.toUpperCase()}`}</span>
+            <span className='syntax'>{`: [`}</span>
+            <span>
+              {this.state.ownBtnState[index] &&
+                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+            </span>
+            <span>
+              {this.state.ownBtnState[index]
+                ? arrayComp
+                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...],' : '...]'}</span>}
+            </span>
           </div>
         )
         elem.push(returnElem)
@@ -103,16 +107,17 @@ class ObjectComponent extends Component {
           />
         )
         const returnElem = (
-          <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{`${key}: {`}</span>
+          <div key={shortid.generate()}  className='key-value'>
+            <span className='key'>{`${key.toUpperCase()}`}</span>
+            <span className='syntax'>{`: {`}</span>
             <span>
               {this.state.ownBtnState[index] &&
-                <span class='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? objectComp
-                : <span class='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...},' : '...}'}</span>}
+                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...},' : '...}'}</span>}
             </span>
           </div>
         )
@@ -121,8 +126,10 @@ class ObjectComponent extends Component {
       // otherwise, returns undefined
       else {
         elem.push(
-          <div key={shortid.generate()} style={{marginLeft: '15px'}}>
-            <span>{`${key}: undefined${counter !== dataLength ? ',' : ''}`}</span>
+          <div key={shortid.generate()}  className='key-value'>
+            <span className='key'>{`${key.toUpperCase()}`}</span>
+            <span className='syntax'>{`:`}</span>
+            <span>{` undefined${counter !== dataLength ? ',' : ''}`}</span>
           </div>
         )
       }
@@ -130,9 +137,9 @@ class ObjectComponent extends Component {
 
     return (
       <div className={ this.props.nested ? 'object-compo' : 'top-parent'}>
-        { this.props.nested ? '' : '{'}
+        <p className='syntax'>{ this.props.nested ? '' : '{'}</p>
           {elem}
-        { this.props.commar ? '},' : '}'}
+        <p className='syntax' style={{marginBottom: '10px'}}>{ this.props.commar ? '},' : '}'}</p>
       </div>
     );
   }
