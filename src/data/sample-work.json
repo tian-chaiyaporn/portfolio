@@ -1,10 +1,10 @@
 {
-  "sampleWork": [
+  "sample_work": [
     {
       "title": "Flash Card Native",
       "subtitle": "A React Native App",
       "description": "Users can create decks of flashcards. They can quiz by the deck and receive score feedback.",
-      "sourceCodeURL": "https://github.com/tian-chaiyaporn",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
       "demo": "Note: Use Expo to host app for demo",
       "tag": ["React Native", "ES6", "JavaScript"]
     },
@@ -12,7 +12,7 @@
       "title": "Readable App",
       "subtitle": "A React/Redux App",
       "description": "A simulation of a forum website.",
-      "sourceCodeURL": "https://github.com/tian-chaiyaporn",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
       "demo": "Note: can only download and put up local dev environment (consider free hosting somewhere)",
       "tag": ["React", "Redux", "ES6", "JavaScript"]
     }
