@@ -1,5 +1,5 @@
 .Navigation {
-  position: fixed;
+  position: absolute;
   right: 20px;
   text-align: right;
   text-decoration: none;

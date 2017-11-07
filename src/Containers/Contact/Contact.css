@@ -5,21 +5,71 @@
 }
 
 .contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   height: 100%;
-  padding: 20px;
+  top: 150px;
+  left: 150px;
 }
 
 .contact-box {
-  display: flex;
-  flex-direction: column;
+  display: inline;
   max-height: 100%;
-  max-width: 100%;
+  max-width: 80%;
+}
+
+@media (max-width: 800px) {
+  .contact {
+    left: 10%;
+    padding-right: 20%;
+  }
+  .contact-box {
+    max-width: 100%;
+  }
+}
+
+.heading {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-heading-appear {
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-heading-appear.typing-heading-appear-active {
+  width: 100%;
+  animation: type-in-heading 1s steps(8, end)
+}
+
+@keyframes type-in-heading{
+  from {width:0%}
+  to {width: 100%}
+}
+
+.typing-body-contact-appear {
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-body-contact-appear.typing-body-contact-appear-active {
+  width: 100%;
+  animation: type-in-body-contact 2s steps(40, end)
+}
+
+@keyframes type-in-body-contact{
+  from {width:0%}
+  to {width: 100%}
 }
 
 .profile {
+  top: 300px;
+  right: 300px;
+  position: absolute;
+  overflow: hidden;
   font-size: 2px;
   line-height: 5px;
   min-inline-size: min-content;
@@ -27,5 +77,33 @@
   line-break: loose;
   width: 345px;
   color: #FFF;
-  align-self: flex-end;
+}
+
+@media (max-width: 800px) {
+  .profile {
+    right: 100px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile {
+    display: none;
+  }
+}
+
+.typing-profile-appear {
+  height: 0%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.typing-profile-appear.typing-profile-appear-active {
+  height: 40%;
+  animation: type-in-profile 5s
+}
+
+@keyframes type-in-profile{
+  from {height:0%}
+  to {height: 40%}
 }

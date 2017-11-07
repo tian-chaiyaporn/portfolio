@@ -2,19 +2,67 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 17px;
 }
 
 .database {
-  display: flex;
-  justify-content: center;
+  position: relative;
   height: 100%;
-  margin-top: 150px;
-  padding: 20px;
+  top: 150px;
+  left: 150px;
+}
+
+@media (max-width: 800px) {
+  .database {
+    position: relative;
+    left: 10%;
+    padding-right: 20%;
+  }
 }
 
 .database-item {
+  display: inline-block;
   overflow: visible;
   max-height: 100%;
-  max-width: 95%;
-  width: 70%;
+  max-width: 100%;
+}
+
+.heading {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-heading-database-appear {
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-heading-database-appear.typing-heading-database-appear-active {
+  width: 50%;
+  animation: type-in-heading-database 0.5s steps(15, end)
+}
+
+@keyframes type-in-heading-database{
+  from {width:0%}
+  to {width: 50%}
+}
+
+.typing-body-database-appear {
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-body-database-appear.typing-body-database-appear-active {
+  width: 90%;
+  animation: type-in-body-database 2s steps(50, end)
+}
+
+@keyframes type-in-body-database{
+  from {width:0%}
+  to {width: 90%}
 }
