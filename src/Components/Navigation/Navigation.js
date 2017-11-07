@@ -111,6 +111,8 @@ class Navigation extends Component {
         {databaseLink}
         {sampleLink}
         {contactLink}
+        <h1 className="background">ME</h1>
+        <h1 className="background">NU</h1>
       </div>
     );
   }

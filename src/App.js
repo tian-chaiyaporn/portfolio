@@ -13,7 +13,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="route-container">
           <div className="route-container-item">
-            <Route path="/:route" component={Navigation} />
+            <Route path="/" component={Navigation} />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/contact" component={Contact} />
