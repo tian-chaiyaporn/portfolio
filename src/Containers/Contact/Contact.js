@@ -46,7 +46,7 @@ class Contact extends Component {
             <CSSTransitionGroup
               transitionName="typing-profile"
               transitionAppear={true}
-              transitionAppearTimeout={5000}
+              transitionAppearTimeout={4000}
               transitionEnter={false}
               transitionLeave={false}
             >

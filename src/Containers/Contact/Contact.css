@@ -66,8 +66,8 @@
 }
 
 .profile {
-  top: 300px;
-  right: 300px;
+  top: 150px;
+  right: 250px;
   position: absolute;
   overflow: hidden;
   font-size: 2px;
@@ -81,6 +81,7 @@
 
 @media (max-width: 800px) {
   .profile {
+    top: 300px;
     right: 100px;
     text-align: center;
   }
@@ -99,11 +100,11 @@
 }
 
 .typing-profile-appear.typing-profile-appear-active {
-  height: 40%;
-  animation: type-in-profile 5s
+  height: 50%;
+  animation: type-in-profile 4s
 }
 
 @keyframes type-in-profile{
   from {height:0%}
-  to {height: 40%}
+  to {height: 50%}
 }
