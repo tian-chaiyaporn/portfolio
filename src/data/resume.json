@@ -3,12 +3,12 @@
     {
       "type": "Frontend Development",
       "level": "Beginner to Intermediate",
-      "technology": ["JavaScript", "ES6", "React", "Redux", "HTML5", "CSS", "SASS", "Gulp"]
+      "technology": ["JavaScript", "ES5 + ES6", "React", "Redux", "HTML5", "CSS", "SASS", "Gulp", "Sinon", "Mocha", "Chai", "Unit Test"]
     },
     {
       "type": "Backend Development",
       "level": "Beginner",
-      "technology": ["NodeJS", "Express", "MongoDB", "MySQL"],
+      "technology": ["NodeJS", "Express", "MongoDB", "MySQL", "Mocha", "Chai", "Integration Test"],
       "note": "I can do quick fixes and prototypes if needed, and am willing to learn more. I also have some experience with Python and PostgreSQL and can pick them up if needed"
     },
     {
@@ -28,19 +28,19 @@
     "School": {
       "Primary": "Thailand",
       "Secondary": "England - A levels",
-      "Time": "-2010"
+      "Years": "-2010"
     },
     "Bachelors_Degree": {
       "Location": "Cardiff University",
       "Subject": "Architecture",
       "Grade": "Second-class Honour, Upper Division (equivalent to B+)",
-      "Time": "2010-2013"
+      "Years": "2010-2013"
     },
     "Masters_Degree": {
       "Location": "New York University",
       "Subject": "Communications and Management",
       "Grade": "3.9 (equivalent to A)",
-      "Time": "2014-2016"
+      "Years": "2014-2016"
     },
     "MOOC": {
       "Udacity": ["React Nanodegree", "Full Stack Web Developer Nanodegree", "Android Basic Nanodegree by Google"],
