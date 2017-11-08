@@ -3,7 +3,7 @@
     {
       "type": "Frontend Development",
       "level": "Beginner to Intermediate",
-      "technology": ["JavaScript", "ES5 + ES6", "React", "Redux", "HTML5", "CSS", "SASS", "Gulp", "Sinon", "Mocha", "Chai", "Unit Test"]
+      "technology": ["JavaScript", "ES5 + ES6", "React", "Redux", "jQuery", "HTML5", "CSS", "SASS", "Gulp", "Sinon", "Mocha", "Chai", "Unit Test"]
     },
     {
       "type": "Backend Development",
@@ -22,6 +22,14 @@
       "level": "Intermediate",
       "technology": ["Adobe Photoshop", "Adobe Illustrator"],
       "note": "While I am transitioning to a web developer, I can easily pick up and produce professional design work if needed as this is a skill that I was trained in"
+    },
+    {
+      "type": "Communications and Linguistics",
+      "level": {
+        "Thai": "Native - ready for work",
+        "English": "Fluent - ready for work",
+        "Mandarin": "Beginner - can learn more for work"
+      }
     }
   ],
   "education": {
