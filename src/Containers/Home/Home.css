@@ -1,0 +1,65 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.home {
+  position: relative;
+  height: 100%;
+  top: 150px;
+  left: 150px;
+}
+
+@media (max-width: 800px) {
+  .home {
+    position: relative;
+    left: 10%;
+    padding-right: 20%;
+  }
+}
+
+.home-item {
+  display: inline-block;
+  overflow: visible;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.heading {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-heading-home-appear {
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-heading-home-appear.typing-heading-home-appear-active {
+  width: 50%;
+  animation: type-in-heading-home 0.5s steps(15, end)
+}
+
+@keyframes type-in-heading-home{
+  from {width:0%}
+  to {width: 50%}
+}
+
+.typing-body-home-appear {
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typing-body-home-appear.typing-body-home-appear-active {
+  width: 90%;
+  animation: type-in-body-home 1s steps(60, end)
+}
+
+@keyframes type-in-body-home{
+  from {width:0%}
+  to {width: 90%}
+}
