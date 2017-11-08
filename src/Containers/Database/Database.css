@@ -59,7 +59,7 @@
 
 .typing-body-database-appear.typing-body-database-appear-active {
   width: 90%;
-  animation: type-in-body-database 2s steps(50, end)
+  animation: type-in-body-database 1.5s steps(50, end)
 }
 
 @keyframes type-in-body-database{
