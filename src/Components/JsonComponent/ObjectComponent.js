@@ -50,7 +50,7 @@ class ObjectComponent extends Component {
       counter++
       // if data is number/string/boolean, return normal {key: number/string}
       if (typeof data[key] === 'string' || typeof data[key] === 'number' || typeof data[key] === 'boolean') {
-        const value = typeof data[key] && data[key].includes('.com') && (data[key].includes('http') || data[key].includes('www.'))
+        const value = typeof data[key] == 'string' && (data[key].includes('http') || data[key].includes('www.'))
           ? <a className='link' href={data[key]}>{data[key]}</a>
           : <span className='value'>{`${data[key]}`}</span>
         elem.push(
