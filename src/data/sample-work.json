@@ -1,12 +1,22 @@
 {
-  "sample_work": [
+  "frontend": [
     {
-      "title": "Flash Card Native",
-      "subtitle": "A React Native App",
-      "description": "Users can create decks of flashcards. They can quiz by the deck and receive score feedback.",
-      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
-      "demo": "Note: Use Expo to host app for demo",
-      "tag": ["React Native", "ES6", "JavaScript"]
+      "title": "House Price Comparison",
+      "subtitle": "A jQuery App",
+      "description": "A website that allows users to search house prices in the US (Zillow gives free API on house price data not found in Thailand).",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn/thinkful-capstone-1",
+      "demo": "https://tian-chaiyaporn.github.io/thinkful-capstone-1/",
+      "note": "Note: Quandl changed the API, must update this.",
+      "tag": ["ES5", "JavaScript", "jQuery", "Gulp", "SASS", "HTML5", "MVC architecture pattern"]
+    },
+    {
+      "title": "Decision Dice - frontend (SPA)",
+      "subtitle": "A jQuery/NodeJS App - frontend part",
+      "description": "Helps users automate trivial decisions like which food to eat or what to do in the evening. Users can put most common options in a 'dice' to roll and let chance decide for them",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn/thinkful-capstone-dice/tree/master/src/spa",
+      "demo": "https://whispering-earth-54556.herokuapp.com/",
+      "note": "Loading app maybe slow as this is hosted in the US. It was created while I was in New York.",
+      "tag": ["jQuery", "Gulp", "Babel", "ES6", "JavaScript"]
     },
     {
       "title": "Readable App",
@@ -15,6 +25,72 @@
       "sourcecode_URL": "https://github.com/tian-chaiyaporn",
       "demo": "Note: can only download and put up local dev environment (consider free hosting somewhere)",
       "tag": ["React", "Redux", "ES6", "JavaScript"]
+    },
+    {
+      "title": "Portfolio",
+      "subtitle": "A React App",
+      "description": "It shows the source code for this website itself. I experimented with recursion in JsonComponent and learned a lot making this.",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn/portfolio",
+      "demo": "This is it.",
+      "tag": ["React", "ES6", "CSS", "JavaScript"]
+    }
+  ],
+  "backend": [
+    {
+      "title": "Decision Dice - backend (API)",
+      "subtitle": "A jQuery/NodeJS App - backend part",
+      "description": "Helps users automate trivial decisions like which food to eat or what to do in the evening. Users can put most common options in a 'dice' to roll and let chance decide for them",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn/thinkful-capstone-dice/tree/master/src/api",
+      "demo": "https://whispering-earth-54556.herokuapp.com/",
+      "note": "Loading app maybe slow as this is hosted in the US. It was created while I was in New York.",
+      "tag": ["NodeJS", "Mocha/Chai/Sinon", "PassportJS", "Mongoose/MongoDB", "ES6", "JavaScript", "TravisCI", "Heroku"]
+    },
+    {
+      "title": "Flash Card Website",
+      "subtitle": "A React/Redux App",
+      "description": "A simulation of a forum website.",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
+      "demo": "Note: can only download and put up local dev environment (consider free hosting somewhere)",
+      "tag": ["React", "Redux", "ES6", "JavaScript"]
+    }
+  ],
+  "mobile": [
+    {
+      "title": "Flash Card Native",
+      "subtitle": "A React Native App",
+      "description": "Users can create decks of flashcards. They can quiz by the deck and receive score feedback. This is not my own design, made to specifications",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
+      "demo": "Note: Use Expo to host app for demo",
+      "tag": ["React Native", "ES6", "JavaScript"]
+    }
+  ],
+  "design": [
+    {
+      "title": "Suan Bua Hotel - Logo and Identity Example",
+      "subtitle": "For a small hotel & resort in the north of Thailand",
+      "description": "Commissioned for Logo, but worked out brand identity so client can see potential of the design.",
+      "demo": "https://www.behance.net/gallery/58667077/hotel-logo-and-brand-identity",
+      "tag": ["Logo", "Graphic Design", "Brand Identity", "Illustrator", "Photoshop"]
+    },
+    {
+      "title": "NOAM - graphic collection",
+      "subtitle": "A jewelry website aimed for 20-30 years old",
+      "description": "A collection of images and screenshots from a jewelry website that I designed. Nothing adventourous, designed for the less computer savvy in mind.",
+      "demo": {
+        "web_design": "https://www.behance.net/gallery/58660165/noam-nyc-jewelry-web-mock-up-non-commercial",
+        "others": "https://www.behance.net/gallery/58660679/noam-nyc-banners-ads-photos"
+      },
+      "tag": ["Logo", "Graphic Design", "Brand Identity", "Illustrator", "Photoshop", "Ads", "Banners", "Product Photography", "Web Design"]
+    },
+    {
+      "title": "A collage of different works",
+      "subtitle": "A collection of digital design works for quick perusal",
+      "description": "Most of these are small projects, freelance works, and hobby works combined into a collage.",
+      "demo": {
+        "web_design": "https://www.behance.net/gallery/58648613/Collage-Of-Works",
+        "social_media": "https://www.behance.net/gallery/58649663/Ad-Ideas"
+      },
+      "tag": ["Logo", "Social Media Posts", "Branding", "Digital Asset Design", "Photography"]
     }
   ]
 }
