@@ -10,7 +10,7 @@ import './App.css'
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/portfolio">
         <div className="route-container">
           <div className="route-container-item">
             <Route path="/" component={Navigation} />
