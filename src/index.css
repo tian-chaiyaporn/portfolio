@@ -9,3 +9,18 @@ body {
   background-color: #282828;
   color: #FFCC00;
 }
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-right: 17px;
+}
+
+.heading {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
