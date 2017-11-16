@@ -2,7 +2,7 @@
   "name": "portfolio_web",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://tian-chaiyaporn.github.io/portfolio",
+  "homepage" : "https://tian-chaiyaporn.github.io/portfolio",
   "dependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
