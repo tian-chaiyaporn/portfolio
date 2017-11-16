@@ -35,6 +35,11 @@ button {
   outline: inherit !important;
 }
 
-button:focus {
+button:focus{
   background-color: #FFF;
+}
+
+@keyframes type-animation{
+  from {width:0%}
+  to {width: 100%}
 }

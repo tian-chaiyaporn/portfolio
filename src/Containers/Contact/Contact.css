@@ -21,36 +21,20 @@
   }
 }
 
-.typing-heading-appear {
+.typing-heading-contact-appear, .typing-body-contact-appear {
   width: 0%;
   overflow: hidden;
   white-space: nowrap;
 }
 
-.typing-heading-appear.typing-heading-appear-active {
+.typing-heading-contact-appear.typing-heading-contact-appear-active {
   width: 100%;
-  animation: type-in-heading 1s steps(8, end)
-}
-
-@keyframes type-in-heading{
-  from {width:0%}
-  to {width: 100%}
-}
-
-.typing-body-contact-appear {
-  width: 0%;
-  overflow: hidden;
-  white-space: nowrap;
+  animation: type-animation 0.8s steps(7, end)
 }
 
 .typing-body-contact-appear.typing-body-contact-appear-active {
   width: 100%;
-  animation: type-in-body-contact 2s steps(40, end)
-}
-
-@keyframes type-in-body-contact{
-  from {width:0%}
-  to {width: 100%}
+  animation: type-animation 2.5s steps(45, end)
 }
 
 .profile {
@@ -89,7 +73,7 @@
 
 .typing-profile-appear.typing-profile-appear-active {
   height: 50%;
-  animation: type-in-profile 4s
+  animation: type-in-profile 2s
 }
 
 @keyframes type-in-profile{

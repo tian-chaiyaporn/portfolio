@@ -1,3 +1,7 @@
+.heading button:hover {
+  color: #FFF;
+}
+
 .database {
   position: relative;
   height: 100%;
@@ -20,34 +24,18 @@
   max-width: 100%;
 }
 
-.typing-heading-database-appear {
+.typing-heading-database-appear, .typing-body-database-appear {
   width: 0%;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .typing-heading-database-appear.typing-heading-database-appear-active {
-  width: 50%;
-  animation: type-in-heading-database 0.5s steps(15, end)
-}
-
-@keyframes type-in-heading-database{
-  from {width:0%}
-  to {width: 50%}
-}
-
-.typing-body-database-appear {
-  width: 0%;
-  overflow: hidden;
-  white-space: nowrap;
+  width: 100%;
+  animation: type-animation 0.8s steps(8, end)
 }
 
 .typing-body-database-appear.typing-body-database-appear-active {
-  width: 90%;
-  animation: type-in-body-database 1.5s steps(50, end)
-}
-
-@keyframes type-in-body-database{
-  from {width:0%}
-  to {width: 90%}
+  width: 100%;
+  animation: type-animation 2.5s steps(35, end)
 }

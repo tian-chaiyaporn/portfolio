@@ -20,34 +20,18 @@
   max-width: 100%;
 }
 
-.typing-heading-home-appear {
+.typing-heading-home-appear, .typing-body-home-appear {
   width: 0%;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .typing-heading-home-appear.typing-heading-home-appear-active {
-  width: 50%;
-  animation: type-in-heading-home 0.5s steps(15, end)
-}
-
-@keyframes type-in-heading-home{
-  from {width:0%}
-  to {width: 50%}
-}
-
-.typing-body-home-appear {
-  width: 0%;
-  overflow: hidden;
-  white-space: nowrap;
+  width: 100%;
+  animation: type-animation 1s steps(8, end)
 }
 
 .typing-body-home-appear.typing-body-home-appear-active {
-  width: 90%;
-  animation: type-in-body-home 1s steps(60, end)
-}
-
-@keyframes type-in-body-home{
-  from {width:0%}
-  to {width: 90%}
+  width: 100%;
+  animation: type-animation 2s steps(40, end)
 }

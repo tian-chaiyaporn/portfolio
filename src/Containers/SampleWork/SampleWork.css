@@ -19,34 +19,18 @@
   max-width: 100%;
 }
 
-.typing-heading-appear {
+.typing-heading-appear, .typing-body-sample-appear {
   width: 0%;
   overflow: hidden;
   white-space: nowrap;
 }
 
 .typing-heading-appear.typing-heading-appear-active {
-  width: 80%;
-  animation: type-in-heading 1s steps(20, end)
-}
-
-@keyframes type-in-heading{
-  from {width:0%}
-  to {width: 80%}
-}
-
-.typing-body-sample-appear {
-  width: 0%;
-  overflow: hidden;
-  white-space: nowrap;
+  width: 100%;
+  animation: type-animation 1s steps(11, end)
 }
 
 .typing-body-sample-appear.typing-body-sample-appear-active {
-  width: 30%;
-  animation: type-in-body-sample 1s steps(20, end)
-}
-
-@keyframes type-in-body-sample{
-  from {width:0%}
-  to {width: 30%}
+  width: 100%;
+  animation: type-animation 1.2s steps(15, end)
 }

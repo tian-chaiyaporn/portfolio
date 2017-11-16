@@ -25,28 +25,36 @@ class Contact extends Component {
       <div className="container">
         <div className="contact">
           <div className="contact-box">
-            <CSSTransitionGroup
-              transitionName="typing-heading"
-              transitionAppear={true}
-              transitionAppearTimeout={1000}
-              transitionEnter={false}
-              transitionLeave={false}
-            >
-              <h1 className="heading">CONTACT</h1>
-            </CSSTransitionGroup>
-            <CSSTransitionGroup
-              transitionName="typing-body-contact"
-              transitionAppear={true}
-              transitionAppearTimeout={2000}
-              transitionEnter={false}
-              transitionLeave={false}
-            >
-              <ObjectComponent data={this.state.contact} />
-            </CSSTransitionGroup>
+            <div>
+              <div style={{'display': 'inline-block'}}>
+                <CSSTransitionGroup
+                  transitionName="typing-heading-contact"
+                  transitionAppear={true}
+                  transitionAppearTimeout={800}
+                  transitionEnter={false}
+                  transitionLeave={false}
+                >
+                  <h1 className="heading">CONTACT</h1>
+                </CSSTransitionGroup>
+              </div>
+            </div>
+
+            <div style={{'display': 'inline-block'}}>
+              <CSSTransitionGroup
+                transitionName="typing-body-contact"
+                transitionAppear={true}
+                transitionAppearTimeout={2500}
+                transitionEnter={false}
+                transitionLeave={false}
+              >
+                <ObjectComponent data={this.state.contact} />
+              </CSSTransitionGroup>
+            </div>
+
             <CSSTransitionGroup
               transitionName="typing-profile"
               transitionAppear={true}
-              transitionAppearTimeout={4000}
+              transitionAppearTimeout={2000}
               transitionEnter={false}
               transitionLeave={false}
             >

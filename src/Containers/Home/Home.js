@@ -17,24 +17,30 @@ class Home extends Component {
       <div className="container">
         <div className="home">
           <div className="home-item">
-            <CSSTransitionGroup
-              transitionName="typing-heading-home"
-              transitionAppear={true}
-              transitionAppearTimeout={500}
-              transitionEnter={false}
-              transitionLeave={false}
-            >
-              <h1 className="heading">METADATA</h1>
-            </CSSTransitionGroup>
-            <CSSTransitionGroup
-              transitionName="typing-body-home"
-              transitionAppear={true}
-              transitionAppearTimeout={1000}
-              transitionEnter={false}
-              transitionLeave={false}
-            >
-              <ObjectComponent data={this.state.data} />
-            </CSSTransitionGroup>
+            <div>
+              <div style={{'display': 'inline-block'}}>
+                <CSSTransitionGroup
+                  transitionName="typing-heading-home"
+                  transitionAppear={true}
+                  transitionAppearTimeout={1000}
+                  transitionEnter={false}
+                  transitionLeave={false}
+                >
+                  <h1 className="heading">METADATA</h1>
+                </CSSTransitionGroup>
+              </div>
+            </div>
+            <div style={{'display': 'inline-block'}}>
+              <CSSTransitionGroup
+                transitionName="typing-body-home"
+                transitionAppear={true}
+                transitionAppearTimeout={2000}
+                transitionEnter={false}
+                transitionLeave={false}
+              >
+                <ObjectComponent data={this.state.data} />
+              </CSSTransitionGroup>
+            </div>
           </div>
         </div>
       </div>
