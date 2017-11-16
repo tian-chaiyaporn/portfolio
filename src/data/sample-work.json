@@ -6,13 +6,12 @@
       "description": "A website that allows users to search house prices in the US (Zillow gives free API on house price data not found in Thailand).",
       "sourcecode_URL": "https://github.com/tian-chaiyaporn/thinkful-capstone-1",
       "demo": "https://tian-chaiyaporn.github.io/thinkful-capstone-1/",
-      "note": "Note: Quandl changed the API, must update this.",
       "tag": ["ES5", "JavaScript", "jQuery", "Gulp", "SASS", "HTML5", "MVC architecture pattern"]
     },
     {
       "title": "Decision Dice - frontend (SPA)",
       "subtitle": "A jQuery/NodeJS App - frontend part",
-      "description": "Helps users automate trivial decisions like which food to eat or what to do in the evening. Users can put most common options in a 'dice' to roll and let chance decide for them",
+      "description": "Helps users automate trivial decisions e.g. which food to eat or what to do in the evening. Users can put their options in a 'dice' to roll and let chance decide for them",
       "sourcecode_URL": "https://github.com/tian-chaiyaporn/thinkful-capstone-dice/tree/master/src/spa",
       "demo": "https://whispering-earth-54556.herokuapp.com/",
       "note": "Loading app maybe slow as this is hosted in the US. It was created while I was in New York.",
@@ -22,8 +21,8 @@
       "title": "Readable App",
       "subtitle": "A React/Redux App",
       "description": "A simulation of a forum website.",
-      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
-      "demo": "Note: can only download and put up local dev environment (consider free hosting somewhere)",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn/reactnd-project-readable-starter",
+      "demo": "Please clone and put up local dev environment",
       "tag": ["React", "Redux", "ES6", "JavaScript"]
     },
     {
@@ -42,15 +41,15 @@
       "description": "Helps users automate trivial decisions like which food to eat or what to do in the evening. Users can put most common options in a 'dice' to roll and let chance decide for them",
       "sourcecode_URL": "https://github.com/tian-chaiyaporn/thinkful-capstone-dice/tree/master/src/api",
       "demo": "https://whispering-earth-54556.herokuapp.com/",
-      "note": "Loading app maybe slow as this is hosted in the US. It was created while I was in New York.",
+      "note": "Loading app maybe slow as this is hosted in the US.",
       "tag": ["NodeJS", "Mocha/Chai/Sinon", "PassportJS", "Mongoose/MongoDB", "ES6", "JavaScript", "TravisCI", "Heroku"]
     },
     {
       "title": "Flash Card Website",
       "subtitle": "A React/Redux App",
-      "description": "A simulation of a forum website.",
-      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
-      "demo": "Note: can only download and put up local dev environment (consider free hosting somewhere)",
+      "description": "A flash card application where user can perform CRUD on flashcards, and quiz themselves.",
+      "sourcecode_URL": "under development",
+      "demo": "Please clone and put up local dev environment",
       "tag": ["React", "Redux", "ES6", "JavaScript"]
     }
   ],
@@ -58,8 +57,8 @@
     {
       "title": "Flash Card Native",
       "subtitle": "A React Native App",
-      "description": "Users can create decks of flashcards. They can quiz by the deck and receive score feedback. This is not my own design, made to specifications",
-      "sourcecode_URL": "https://github.com/tian-chaiyaporn",
+      "description": "Users can create decks of flashcards. They can quiz by the deck and receive score feedback. The design is not mine, but I wrote the code",
+      "sourcecode_URL": "https://github.com/tian-chaiyaporn/flash-card-react-native",
       "demo": "Note: Use Expo to host app for demo",
       "tag": ["React Native", "ES6", "JavaScript"]
     }
@@ -67,7 +66,7 @@
   "design": [
     {
       "title": "Suan Bua Hotel - Logo and Identity Example",
-      "subtitle": "For a small hotel & resort in the north of Thailand",
+      "subtitle": "Brand Identity for a small hotel & resort in the north of Thailand",
       "description": "Commissioned for Logo, but worked out brand identity so client can see potential of the design.",
       "demo": "https://www.behance.net/gallery/58667077/hotel-logo-and-brand-identity",
       "tag": ["Logo", "Graphic Design", "Brand Identity", "Illustrator", "Photoshop"]
