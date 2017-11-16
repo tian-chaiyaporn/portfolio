@@ -8,9 +8,17 @@ class SampleWork extends Component {
   constructor() {
     super()
     this.state = {
-      sampleWork: sampleWorkData
+      sampleWork: sampleWorkData,
+      expandAll: false
     }
+    this.handleClick = this.handleClick.bind(this)
   }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({expandAll: true})
+  }
+
   render() {
     return (
       <div className="container">
@@ -25,7 +33,10 @@ class SampleWork extends Component {
                   transitionEnter={false}
                   transitionLeave={false}
                 >
-                  <h1 className="heading">SAMPLE WORKS</h1>
+                  <div className="heading">
+                    <h1>SAMPLE WORKS</h1>
+                    <button onClick={this.handleClick}>EXPAND ALL</button>
+                  </div>
                 </CSSTransitionGroup>
               </div>
             </div>
@@ -37,7 +48,7 @@ class SampleWork extends Component {
                 transitionEnter={false}
                 transitionLeave={false}
               >
-                <ObjectComponent data={this.state.sampleWork} />
+                <ObjectComponent data={this.state.sampleWork} expandAll={this.state.expandAll} />
               </CSSTransitionGroup>
             </div>
           </div>
