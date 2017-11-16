@@ -7,6 +7,12 @@
   margin-bottom: 50px;
 }
 
+@media (max-width: 600px) {
+  .top-parent {
+    max-width: 300px;
+  }
+}
+
 .expand-arrow {
   float: left;
   position: absolute;
@@ -19,6 +25,13 @@
   font-size: 1em;
   transform: rotate(0deg);
   opacity: .2;
+}
+
+@media (max-width: 600px) {
+  .expand-arrow {
+    left: -10px;
+    margin-top: -5px;
+  }
 }
 
 .rotate-arrow {
