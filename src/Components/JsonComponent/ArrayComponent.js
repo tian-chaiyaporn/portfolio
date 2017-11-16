@@ -11,11 +11,20 @@ class ArrayComponent extends Component {
       childBtnState: this.props.savedState && this.props.savedState.childState ? this.props.savedState.childState : [],
       ownBtnState: this.props.savedState && this.props.savedState.ownState
         ? this.props.savedState.ownState.map(s => s)
-        : Object.keys(this.props.data).map(k => false),
-      componentIndex: this.props.componentIndex ? this.props.componentIndex : 0
+        : Object.keys(this.props.data).map(k => this.props.expandAll),
+      componentIndex: this.props.componentIndex ? this.props.componentIndex : 0,
+      expandAll: this.props.expandAll
     }
     this.expandButton = this.expandButton.bind(this)
     this.updateChildButtonsState = this.updateChildButtonsState.bind(this)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    nextProps.expandAll && this.setState({
+      ownBtnState: Object.keys(this.props.data).map(k => nextProps.expandAll),
+      expandAll: nextProps.expandAll,
+      childBtnState: []
+    })
   }
 
   componentDidUpdate() {
@@ -64,6 +73,7 @@ class ArrayComponent extends Component {
           <ObjectComponent
             data={element}
             nested={true}
+            expandAll={this.state.expandAll}
             commar={index + 1 !== dataLength ? true : false}
             componentIndex={index}
             hoistState={this.updateChildButtonsState}
@@ -74,13 +84,18 @@ class ArrayComponent extends Component {
           <div key={shortid.generate()} className='key-value'>
             <span className='syntax'>{`{`}</span>
             <span>
-              {this.state.ownBtnState[index] &&
-                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+              {
+                <button
+                  className={`expand-arrow ${this.state.ownBtnState[index] && 'rotate-arrow'}`}
+                  onClick={(e) => this.expandButton(e, index)}>
+                    {'>'}
+                </button>
+              }
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? objectComp
-                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...},' : '...}'}</span>}
+                : <button className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...},' : '...}'}</button>}
             </span>
           </div>
         )
@@ -92,6 +107,7 @@ class ArrayComponent extends Component {
           <ArrayComponent
             data={element}
             nested={true}
+            expandAll={this.state.expandAll}
             commar={index + 1 !== dataLength ? true : false}
             componentIndex={index}
             hoistState={this.updateChildButtonsState}
@@ -102,13 +118,18 @@ class ArrayComponent extends Component {
           <div key={shortid.generate()} className='key-value'>
             <span className='syntax'>{'['}</span>
             <span>
-              {this.state.ownBtnState[index] &&
-                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+              {
+                <button
+                  className={`expand-arrow ${this.state.ownBtnState[index] && 'rotate-arrow'}`}
+                  onClick={(e) => this.expandButton(e, index)}>
+                    {'>'}
+                </button>
+              }
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? arrayComp
-                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...],' : '...]'}</span>}
+                : <button className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{index + 1 !== dataLength ? '...],' : '...]'}</button>}
             </span>
           </div>
         )

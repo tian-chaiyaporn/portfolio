@@ -11,11 +11,20 @@ class ObjectComponent extends Component {
       childBtnState: this.props.savedState && this.props.savedState.childState ? this.props.savedState.childState : [],
       ownBtnState: this.props.savedState && this.props.savedState.ownState
         ? this.props.savedState.ownState.map(s => s)
-        : Object.keys(this.props.data).map(k => false),
-      componentIndex: this.props.componentIndex ? this.props.componentIndex : 0
+        : Object.keys(this.props.data).map(k => this.props.expandAll),
+      componentIndex: this.props.componentIndex ? this.props.componentIndex : 0,
+      expandAll: this.props.expandAll
     }
     this.expandButton = this.expandButton.bind(this)
     this.updateChildButtonsState = this.updateChildButtonsState.bind(this)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    nextProps.expandAll && this.setState({
+      ownBtnState: Object.keys(this.props.data).map(k => nextProps.expandAll),
+      expandAll: nextProps.expandAll,
+      childBtnState: []
+    })
   }
 
   componentDidUpdate() {
@@ -62,14 +71,14 @@ class ObjectComponent extends Component {
           </div>
         )
       }
-      // if data is array, call ArrayCo
-      // mponent
+      // if data is array, call ArrayComponent
       else if (Array.isArray(data[key])) {
         const index = counter - 1
         const arrayComp = (
           <ArrayComponent
             data={data[key]}
             nested={true}
+            expandAll={this.state.expandAll}
             commar={counter !== dataLength ? true : false}
             componentIndex={index}
             hoistState={this.updateChildButtonsState}
@@ -81,13 +90,18 @@ class ObjectComponent extends Component {
             <span className='key'>{`${key.toUpperCase()}`}</span>
             <span className='syntax'>{`: [`}</span>
             <span>
-              {this.state.ownBtnState[index] &&
-                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+              {
+                <button
+                  className={`expand-arrow ${this.state.ownBtnState[index] && 'rotate-arrow'}`}
+                  onClick={(e) => this.expandButton(e, index)}>
+                    {'>'}
+                </button>
+              }
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? arrayComp
-                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...],' : '...]'}</span>}
+                : <button className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...],' : '...]'}</button>}
             </span>
           </div>
         )
@@ -100,6 +114,7 @@ class ObjectComponent extends Component {
           <ObjectComponent
             data={data[key]}
             nested={true}
+            expandAll={this.state.expandAll}
             commar={counter !== dataLength ? true : false}
             componentIndex={index}
             hoistState={this.updateChildButtonsState}
@@ -111,13 +126,18 @@ class ObjectComponent extends Component {
             <span className='key'>{`${key.toUpperCase()}`}</span>
             <span className='syntax'>{`: {`}</span>
             <span>
-              {this.state.ownBtnState[index] &&
-                <span className='expand-arrow' onClick={(e) => this.expandButton(e, index)}> {'>'} </span>}
+              {
+                <button
+                  className={`expand-arrow ${this.state.ownBtnState[index] && 'rotate-arrow'}`}
+                  onClick={(e) => this.expandButton(e, index)}>
+                    {'>'}
+                </button>
+              }
             </span>
             <span>
               {this.state.ownBtnState[index]
                 ? objectComp
-                : <span className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...},' : '...}'}</span>}
+                : <button className='expand-btn' onClick={(e) => this.expandButton(e, index)}>{counter !== dataLength ? '...},' : '...}'}</button>}
             </span>
           </div>
         )

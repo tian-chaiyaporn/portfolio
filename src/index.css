@@ -24,3 +24,17 @@ body {
   overflow: hidden;
   white-space: nowrap;
 }
+
+button {
+  background: none !important;
+  color: inherit;
+  border: none;
+  padding: 0! important;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit !important;
+}
+
+button:focus {
+  background-color: #FFF;
+}

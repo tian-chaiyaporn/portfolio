@@ -10,9 +10,23 @@
 .expand-arrow {
   float: left;
   position: absolute;
-  left: 0px;
+  left: -10px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
-  color: #757575;
+  color: #FFF;
+  z-index: 2;
+  font-size: 1em;
+  transform: rotate(0deg);
+  opacity: .2;
+}
+
+.rotate-arrow {
+  transform: rotate(90deg);
+}
+
+.expand-arrow:hover, .expand-arrow:focus {
+  opacity: .8;
 }
 
 .expand-btn {
@@ -25,7 +39,7 @@
   color: inherit;
 }
 
-.link:hover {
+.link:hover, .link:focus {
   color: #FFFFFF;
 }
 
@@ -40,9 +54,10 @@
 }
 
 .value {
-  color: #33FF00
+  color: #66FF66;
 }
 
 .syntax {
-  color: #757575
+  z-index: 3;
+  color: #757575;
 }
