@@ -17,6 +17,7 @@
   float: left;
   position: absolute;
   left: -7px;
+  margin-top: -5px;
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -30,7 +31,6 @@
 @media (max-width: 600px) {
   .expand-arrow {
     left: -10px;
-    margin-top: -5px;
   }
 }
 
