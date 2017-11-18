@@ -7,11 +7,26 @@
   margin-bottom: 50px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .top-parent {
-    max-width: 300px;
+    font-size: 1.5em;
+    line-height: 1.1em;
   }
 }
+
+@media (max-width: 600px) {
+  .top-parent {
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .top-parent {
+    font-size: 1.5em;
+    line-height: 1.1em;
+  }
+}
+
 
 .expand-arrow {
   float: left;
@@ -31,6 +46,7 @@
 @media (max-width: 600px) {
   .expand-arrow {
     left: -10px;
+    margin-top: 0px;
   }
 }
 
@@ -49,7 +65,7 @@
 
 .link {
   text-decoration: none;
-  color: inherit;
+  color: #64B5F6;
 }
 
 .link:hover, .link:focus {
