@@ -46,10 +46,10 @@
     },
     {
       "title": "Flash Card Website",
-      "subtitle": "A React/Redux App",
+      "subtitle": "A React/Redux + NodeJS App",
       "description": "A flash card application where user can perform CRUD on flashcards, and quiz themselves.",
-      "sourcecode_URL": "under development",
-      "demo": "Please clone and put up local dev environment",
+      "sourcecode_URL": "rewriting",
+      "demo": "rewriting",
       "tag": ["React", "Redux", "ES6", "JavaScript"]
     }
   ],
@@ -59,7 +59,7 @@
       "subtitle": "A React Native App",
       "description": "Users can create decks of flashcards. They can quiz by the deck and receive score feedback. The design is not mine, but I wrote the code",
       "sourcecode_URL": "https://github.com/tian-chaiyaporn/flash-card-react-native",
-      "demo": "Note: Use Expo to host app for demo",
+      "demo": "Please clone and put up local dev environment",
       "tag": ["React Native", "ES6", "JavaScript"]
     }
   ],
