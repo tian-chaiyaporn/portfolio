@@ -2,7 +2,7 @@
   "name": "portfolio_web",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://tian-chaiyaporn.github.io/portfolio",
+  "homepage": "https://tian-chaiyaporn.github.io/portfolio",
   "dependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
@@ -18,5 +18,8 @@
     "build": "react-scripts build && mv build docs",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
