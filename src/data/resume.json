@@ -6,22 +6,14 @@
       "technology": ["JavaScript", "ES5 + ES6", "React", "Redux", "jQuery", "HTML5", "CSS", "SASS", "Gulp", "Sinon", "Mocha", "Chai", "Unit Test"]
     },
     {
-      "type": "Backend Development",
-      "level": "Beginner",
-      "technology": ["NodeJS", "Express", "MongoDB", "MySQL", "Mocha", "Chai", "Integration Test"],
-      "note": "I can do quick fixes and prototypes if needed, and am willing to learn more. I also have minimal experience with Python and PostgreSQL and can pick them up if needed"
-    },
-    {
       "type": "Mobile Development - React Native",
-      "level": "Beginner",
+      "level": "Intermediate to Advanced",
       "technology": ["React Native", "Redux", "Expo"],
-      "note": "I have built one project currently, and in the process of learning more. I also have tinkered with Android development in Java, and in the process of learning more, including Swift"
     },
     {
       "type": "Design - Graphic, UI, UX",
       "level": "Intermediate",
       "technology": ["Adobe Photoshop", "Adobe Illustrator"],
-      "note": "While I am transitioning to be a web developer, I can easily pick up and produce professional design work if needed as this is a skill that I was trained in"
     },
     {
       "type": "Communications and Linguistics",
@@ -55,7 +47,13 @@
       "Thinkful": ["Flexible Full Stack Web Developer Course"]
     }
   },
-  "work_Experience": [
+  "work_experience": [
+    {
+      "year": "2018-present",
+      "title": "Frontend Developer (Mobile)",
+      "company": "Scale360 Ltd",
+      "experience": "I was responsible for building and maintaining a production-level cross-platform e-commerce app. The features I have implemented for the app includes: authentication, deeplinking, routing, and form management."
+    },
     {
       "year": "2016-2017",
       "title": "Founder/Manager",
