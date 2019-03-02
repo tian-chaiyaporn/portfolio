@@ -8,12 +8,12 @@
     {
       "type": "Mobile Development - React Native",
       "level": "Intermediate to Advanced",
-      "technology": ["React Native", "Redux", "Expo"],
+      "technology": ["React Native", "Redux", "Expo"]
     },
     {
       "type": "Design - Graphic, UI, UX",
       "level": "Intermediate",
-      "technology": ["Adobe Photoshop", "Adobe Illustrator"],
+      "technology": ["Adobe Photoshop", "Adobe Illustrator"]
     },
     {
       "type": "Communications and Linguistics",
@@ -67,5 +67,5 @@
       "experience": "While working as an intern in this Ad agency, I interacted with clients, discussed specifications, and executed and/or relayed their expections to team members. I also learned about business processes and the industry as a whole. My team started from 4 team members and grew to 20 members by the time I left, giving me a good insight into the changing team dynamic."
     }
   ],
-  "looking_For": "Frontend Development - Entry Level"
+  "looking_For": "Mobile Development"
 }
