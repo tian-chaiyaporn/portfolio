@@ -1,12 +1,12 @@
 {
   "Doctype": "Electronic Portfolio",
   "Author": "Chaiyaporn Chinotaikul",
-  "Last_Updated": "2017",
+  "Last_Updated": "2019",
   "Content": {
     "H": "Hello_World / Current Page",
     "D": "Database / My Resume",
     "S": "Sample Work: Demo Link & Source Code",
     "C": "Contact Information"
   },
-  "Status": "Actively Spamming HR for Job Opportunity in January"
+  "Status": "Looking for remote part-time job in React Native development"
 }
