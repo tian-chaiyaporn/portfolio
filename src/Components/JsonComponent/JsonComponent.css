@@ -84,6 +84,7 @@
 
 .value {
   color: #66FF66;
+  white-space: pre-wrap;
 }
 
 .syntax {

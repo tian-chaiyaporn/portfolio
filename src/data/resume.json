@@ -1,14 +1,15 @@
 {
   "skills": [
     {
+      "type": "Mobile Development - React Native",
+      "level": "Intermediate to Advance",
+      "technology": ["React Native", "Redux", "Redux-Form", "CucumberJS", "Detox", "Jest", "Animation API"]
+    },
+    {
+
       "type": "Frontend Development",
       "level": "Beginner to Intermediate",
       "technology": ["JavaScript", "ES5 + ES6", "React", "Redux", "jQuery", "HTML5", "CSS", "SASS", "Gulp", "Sinon", "Mocha", "Chai", "Unit Test"]
-    },
-    {
-      "type": "Mobile Development - React Native",
-      "level": "Intermediate to Advanced",
-      "technology": ["React Native", "Redux", "Expo"]
     },
     {
       "type": "Design - Graphic, UI, UX",
@@ -52,7 +53,7 @@
       "year": "2018-present",
       "title": "Frontend Developer (Mobile)",
       "company": "Scale360 Ltd",
-      "experience": "I was responsible for building and maintaining a production-level cross-platform e-commerce app. The features I have implemented for the app includes: authentication, deeplinking, routing, and form management."
+      "experience": "I am responsible for building and maintaining a production-level cross-platform e-commerce app. The features I have implemented includes: authentication, deeplinking, routing, and form management.\n\nMy main responsibility is to transform a code-base ridden with technical debt into something maintainable, as well as reviewing pull requests to make sure proper conventions are followed and the code is well-designed to reduce coupling from the parts of the code that are too fragile.\n\nI was also tasked with designing automated e2e tests that strictly follows the BDD and collaborating with both QA and BA to come up with testable scenarios. We work in an Agile process using the Scrum methodology. Our productivity tools include: JIRA, BitBucket, Slack, and the Gmail ecosystem (Drive, Calendar, etc.)"
     },
     {
       "year": "2016-2017",
